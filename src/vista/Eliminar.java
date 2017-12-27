@@ -29,8 +29,15 @@ public class Eliminar extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txteliminacodigo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txt_elicodigo = new javax.swing.JTextField();
+        btneliminar = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menu_opciones = new javax.swing.JMenu();
+        menu_agregar = new javax.swing.JMenu();
+        menu_modificar = new javax.swing.JMenu();
+        menu_eliminar = new javax.swing.JMenu();
+        menu_listar = new javax.swing.JMenu();
+        menu_salir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,12 +46,35 @@ public class Eliminar extends javax.swing.JFrame {
 
         jLabel2.setText("Codigo");
 
-        jButton1.setText("Eliminar Registro");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btneliminar.setText("Eliminar Registro");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btneliminarActionPerformed(evt);
             }
         });
+
+        menu_opciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        menu_opciones.setText("Menu");
+
+        menu_agregar.setText("Agregar Empleados");
+        menu_opciones.add(menu_agregar);
+
+        menu_modificar.setText("Modificar Empleados");
+        menu_opciones.add(menu_modificar);
+
+        menu_eliminar.setText("Eliminar Empleados");
+        menu_opciones.add(menu_eliminar);
+
+        jMenuBar1.add(menu_opciones);
+
+        menu_listar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        menu_listar.setText("Lista Empleados");
+        jMenuBar1.add(menu_listar);
+
+        menu_salir.setText("Salir");
+        jMenuBar1.add(menu_salir);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -57,11 +87,11 @@ public class Eliminar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btneliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(txteliminacodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_elicodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -72,18 +102,18 @@ public class Eliminar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txteliminacodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_elicodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
-                .addComponent(jButton1)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addComponent(btneliminar)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btneliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,9 +151,16 @@ public class Eliminar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btneliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    public javax.swing.JTextField txteliminacodigo;
+    private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenu menu_agregar;
+    public javax.swing.JMenu menu_eliminar;
+    public javax.swing.JMenu menu_listar;
+    public javax.swing.JMenu menu_modificar;
+    public javax.swing.JMenu menu_opciones;
+    public javax.swing.JMenu menu_salir;
+    public javax.swing.JTextField txt_elicodigo;
     // End of variables declaration//GEN-END:variables
 }

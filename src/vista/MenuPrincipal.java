@@ -27,7 +27,38 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menu_opciones = new javax.swing.JMenu();
+        menu_agregar = new javax.swing.JMenu();
+        menu_modificar = new javax.swing.JMenu();
+        menu_eliminar = new javax.swing.JMenu();
+        menu_listar = new javax.swing.JMenu();
+        menu_salir = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        menu_opciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        menu_opciones.setText("Menu");
+
+        menu_agregar.setText("Agregar Empleados");
+        menu_opciones.add(menu_agregar);
+
+        menu_modificar.setText("Modificar Empleados");
+        menu_opciones.add(menu_modificar);
+
+        menu_eliminar.setText("Eliminar Empleados");
+        menu_opciones.add(menu_eliminar);
+
+        jMenuBar1.add(menu_opciones);
+
+        menu_listar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        menu_listar.setText("Lista Empleados");
+        jMenuBar1.add(menu_listar);
+
+        menu_salir.setText("Salir");
+        jMenuBar1.add(menu_salir);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -37,7 +68,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 278, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +110,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenu menu_agregar;
+    public javax.swing.JMenu menu_eliminar;
+    public javax.swing.JMenu menu_listar;
+    public javax.swing.JMenu menu_modificar;
+    public javax.swing.JMenu menu_opciones;
+    public javax.swing.JMenu menu_salir;
     // End of variables declaration//GEN-END:variables
 }

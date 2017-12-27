@@ -50,6 +50,13 @@ public class Agregar extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         btnagregar = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menu_opciones = new javax.swing.JMenu();
+        menu_agregar = new javax.swing.JMenu();
+        menu_modificar = new javax.swing.JMenu();
+        menu_eliminar = new javax.swing.JMenu();
+        menu_listar = new javax.swing.JMenu();
+        menu_salir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +104,29 @@ public class Agregar extends javax.swing.JFrame {
         jLabel13.setText("V = Viudo");
 
         btnagregar.setText("Agregar Empleado");
+
+        menu_opciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        menu_opciones.setText("Menu");
+
+        menu_agregar.setText("Agregar Empleados");
+        menu_opciones.add(menu_agregar);
+
+        menu_modificar.setText("Modificar Empleados");
+        menu_opciones.add(menu_modificar);
+
+        menu_eliminar.setText("Eliminar Empleados");
+        menu_opciones.add(menu_eliminar);
+
+        jMenuBar1.add(menu_opciones);
+
+        menu_listar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        menu_listar.setText("Lista Empleados");
+        jMenuBar1.add(menu_listar);
+
+        menu_salir.setText("Salir");
+        jMenuBar1.add(menu_salir);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,7 +219,7 @@ public class Agregar extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnagregar)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -255,6 +285,13 @@ public class Agregar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenu menu_agregar;
+    public javax.swing.JMenu menu_eliminar;
+    public javax.swing.JMenu menu_listar;
+    public javax.swing.JMenu menu_modificar;
+    public javax.swing.JMenu menu_opciones;
+    public javax.swing.JMenu menu_salir;
     public javax.swing.JTextField txtapellido;
     public javax.swing.JTextField txtcelular;
     public javax.swing.JTextField txtcodigo;
