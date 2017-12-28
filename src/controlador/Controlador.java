@@ -29,6 +29,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
     Eliminar eli;
     Modificar modi;
     Listar list;
+    ListarRedes listR;
     MenuPrincipal menu;
     Modelo model;
     ConsultasModelo Cmodel;
@@ -70,6 +71,13 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         list.setResizable(false);
         actualizarMostrar();
         
+        //Seteo de ventana Listar REDES
+        listR = new ListarRedes();
+        listR.setTitle("LISTAR TRABAJADORES REDES");
+        listR.setLocationRelativeTo(null);
+        listR.setResizable(false);
+        actualizarMostrarRedes();
+        
         //Le agrego un icono a todas las ventanas
         Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/Icono.png"));
         agre.setIconImage(icon);
@@ -77,6 +85,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         menu.setIconImage(icon);
         list.setIconImage(icon);
         modi.setIconImage(icon);
+        listR.setIconImage(icon);
         
         //ESTABLEZCO UN COLOR PARA LAS VENTANAS
         menu.getContentPane().setBackground(Color.WHITE);
@@ -84,6 +93,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         eli.getContentPane().setBackground(Color.WHITE);
         modi.getContentPane().setBackground(Color.WHITE);
         list.getContentPane().setBackground(Color.WHITE);
+        listR.getContentPane().setBackground(Color.WHITE);
            
         //Escuchas con eventos de Ventana para programar cierres de todas las ventanas
         menu.addWindowListener(this);
@@ -93,18 +103,21 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         list.addWindowListener(this);
         list.addMouseListener(this);
         list.addFocusListener(this);
+        list.addMouseListener(this);
         
         //Escuchas del menu Vista menu Principal
         menu.menu_agregar.addActionListener(this);
         menu.menu_modificar.addActionListener(this);
         menu.menu_eliminar.addActionListener(this);
         menu.menu_listar.addActionListener(this);
+        menu.menu_listar_redes.addActionListener(this);
         menu.menu_salir.addActionListener(this);
         //Escuchas del menu Vista Agregar
         agre.menu_agregar.addActionListener(this);
         agre.menu_modificar.addActionListener(this);
         agre.menu_eliminar.addActionListener(this);
         agre.menu_listar.addActionListener(this);
+        agre.menu_listar_redes.addActionListener(this);
         agre.menu_salir.addActionListener(this);
         agre.btn_limpiar.addActionListener(this);
         
@@ -117,6 +130,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         eli.menu_modificar.addActionListener(this);
         eli.menu_eliminar.addActionListener(this);
         eli.menu_listar.addActionListener(this);
+        eli.menu_listar_redes.addActionListener(this);
         eli.menu_salir.addActionListener(this);
         eli.btn_limpiar.addActionListener(this);
         //Escuchas del menu Vista Modificar
@@ -124,6 +138,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         modi.menu_modificar.addActionListener(this);
         modi.menu_eliminar.addActionListener(this);
         modi.menu_listar.addActionListener(this);
+        modi.menu_listar_redes.addActionListener(this);
         modi.menu_salir.addActionListener(this);
         modi.btn_limpiar.addActionListener(this);
         //Escuchas del menu Vista Listar
@@ -131,6 +146,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         list.menu_modificar.addActionListener(this);
         list.menu_eliminar.addActionListener(this);
         list.menu_listar.addActionListener(this);
+        list.menu_listar_redes.addActionListener(this);
         list.menu_salir.addActionListener(this);
         
         //Escuchas de los elementos de la Vista Agregar
@@ -149,6 +165,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         
         //Escuchas de los elementos de la Vista Listar
         list.btn_volver_listar.addActionListener(this);
+        listR.btn_volver_listar.addActionListener(this);
         
         //METODOS PARA LA VENTANA AGREGAR
         validarSoloNumeros(agre.txtcodigo);
@@ -213,6 +230,10 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
             menu.setVisible(false);
             list.setVisible(true);
         }
+        if(e.getSource()==menu.menu_listar_redes){
+            menu.setVisible(false);
+            listR.setVisible(true);
+        }
         
         //Action Event de Ventana Eliminar
         if(e.getSource()==eli.menu_agregar){
@@ -231,6 +252,10 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         }else if(e.getSource()==eli.menu_listar){
             eli.setVisible(false);
             list.setVisible(true);
+        }
+        if(e.getSource()==eli.menu_listar_redes){
+            eli.setVisible(false);
+            listR.setVisible(true);
         }
         
         //Action Event de Ventana Modificar
@@ -251,6 +276,10 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
             modi.setVisible(false);
             list.setVisible(true);
         }
+        if(e.getSource()==modi.menu_listar_redes){
+            modi.setVisible(false);
+            listR.setVisible(true);
+        }
         
         //Action Event de Ventana Listar
         if(e.getSource()==list.menu_agregar){
@@ -269,6 +298,10 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
             }
         }else if(e.getSource()==list.menu_listar){
             JOptionPane.showMessageDialog(list, "YA ESTÁ EN LA VENTANA LISTAR", "", JOptionPane.INFORMATION_MESSAGE);
+        }
+        if(e.getSource()==list.menu_listar_redes){
+            list.setVisible(false);
+            listR.setVisible(true);
         }
         
         //Action Event de Ventana Agregar
@@ -289,6 +322,10 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
             agre.setVisible(false);
             list.setVisible(true);
         }
+        if(e.getSource()==agre.menu_listar_redes){
+            agre.setVisible(false);
+            listR.setVisible(true);
+        }
         
          //Action Event de los botones volver de todas las ventanas
         if(e.getSource()==eli.btn_volver_eliminar){
@@ -302,6 +339,9 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         }else if(e.getSource()==list.btn_volver_listar){
             menu.setVisible(true);
             list.setVisible(false);
+        }else if(e.getSource()==listR.btn_volver_listar){
+            menu.setVisible(true);
+            listR.setVisible(false);
         }else if(e.getSource()==agre.btn_volver_agregar){
             menu.setVisible(true);
             agre.setVisible(false);
@@ -649,6 +689,9 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         if(me.getSource()==list){
             actualizarMostrar();
         }
+        if(me.getSource()==listR){
+            actualizarMostrarRedes();
+        }
     }
 
     @Override
@@ -711,6 +754,14 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
     public void actualizarMostrar() {
         try {
             list.tbl_listar.setModel(Cmodel.MostrarEmpleados());
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void actualizarMostrarRedes() {
+        try {
+            listR.tbl_listar_redes.setModel(Cmodel.MostrarEmpleadosRedes());
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
         }
