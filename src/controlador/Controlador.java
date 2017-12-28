@@ -576,16 +576,6 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
             }     
         }
         
-        if(fe.getSource()==agre.txtcelular){ 
-            try {
-                String frase=agre.txtcelular.getText();
-                agre.txtcelular.setText(frase.substring(0, 1)+'-'+frase.substring(1, 9));    
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(agre, "CELULAR debe poseer 9 números", "ERROR", JOptionPane.WARNING_MESSAGE);
-                System.out.println(e);
-            }        
-        }
-        
         if(fe.getSource()==agre.txtemail){
             int arroba=0;
             boolean punto=false;
