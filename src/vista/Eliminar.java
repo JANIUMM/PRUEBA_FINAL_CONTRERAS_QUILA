@@ -36,6 +36,7 @@ public class Eliminar extends javax.swing.JFrame {
         btneliminar = new javax.swing.JButton();
         btn_volver_eliminar = new javax.swing.JButton();
         btnbuscar_eliminar = new javax.swing.JButton();
+        btn_limpiar = new javax.swing.JButton();
         MenuPrincipal = new javax.swing.JMenuBar();
         menu_opciones = new javax.swing.JMenu();
         menu_agregar = new javax.swing.JMenuItem();
@@ -118,6 +119,10 @@ public class Eliminar extends javax.swing.JFrame {
         btnbuscar_eliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnbuscar_eliminar.setText("CARGAR CODIGO");
         btnbuscar_eliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btn_limpiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_limpiar.setText("LIMPIAR");
+        btn_limpiar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         menu_opciones.setText("OPCIONES");
 
@@ -204,7 +209,8 @@ public class Eliminar extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel13))))
+                                .addComponent(jLabel13))
+                            .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -226,7 +232,8 @@ public class Eliminar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnbuscar_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnbuscar_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -330,6 +337,7 @@ public class Eliminar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuBar MenuPrincipal;
+    public javax.swing.JButton btn_limpiar;
     public javax.swing.JButton btn_volver_eliminar;
     public javax.swing.JButton btnbuscar_eliminar;
     public javax.swing.JButton btneliminar;

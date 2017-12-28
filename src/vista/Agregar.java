@@ -35,6 +35,7 @@ public class Agregar extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         btnagregar = new javax.swing.JButton();
         btn_volver_agregar = new javax.swing.JButton();
+        btn_limpiar = new javax.swing.JButton();
         MenuPrincipal = new javax.swing.JMenuBar();
         menu_opciones = new javax.swing.JMenu();
         menu_agregar = new javax.swing.JMenuItem();
@@ -114,6 +115,10 @@ public class Agregar extends javax.swing.JFrame {
         btn_volver_agregar.setText("VOLVER");
         btn_volver_agregar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        btn_limpiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_limpiar.setText("LIMPIAR");
+        btn_limpiar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         menu_opciones.setText("OPCIONES");
 
         menu_agregar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
@@ -179,7 +184,9 @@ public class Agregar extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(txtsueldobruto, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
                         .addGap(18, 18, 18)
                         .addComponent(cbdepartamento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
@@ -278,7 +285,8 @@ public class Agregar extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnagregar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_volver_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_volver_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -319,6 +327,7 @@ public class Agregar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuBar MenuPrincipal;
+    public javax.swing.JButton btn_limpiar;
     public javax.swing.JButton btn_volver_agregar;
     public javax.swing.JButton btnagregar;
     public javax.swing.JComboBox<String> cbdepartamento;

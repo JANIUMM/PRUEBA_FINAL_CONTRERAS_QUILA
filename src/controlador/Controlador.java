@@ -106,6 +106,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         agre.menu_eliminar.addActionListener(this);
         agre.menu_listar.addActionListener(this);
         agre.menu_salir.addActionListener(this);
+        agre.btn_limpiar.addActionListener(this);
         
         agre.txtrut.addFocusListener(this);
         agre.txtemail.addFocusListener(this);
@@ -117,12 +118,14 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         eli.menu_eliminar.addActionListener(this);
         eli.menu_listar.addActionListener(this);
         eli.menu_salir.addActionListener(this);
+        eli.btn_limpiar.addActionListener(this);
         //Escuchas del menu Vista Modificar
         modi.menu_agregar.addActionListener(this);
         modi.menu_modificar.addActionListener(this);
         modi.menu_eliminar.addActionListener(this);
         modi.menu_listar.addActionListener(this);
         modi.menu_salir.addActionListener(this);
+        modi.btn_limpiar.addActionListener(this);
         //Escuchas del menu Vista Listar
         list.menu_agregar.addActionListener(this);
         list.menu_modificar.addActionListener(this);
@@ -179,6 +182,18 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        //EVENTOS DE LOS BOTONES LIMPIAR CASILLAS, DEJANDO EL CURSOR EN JTEXTFIELD CODIGO
+        if(e.getSource()==agre.btn_limpiar){
+            limpiarcamposagregar();
+        }
+        if(e.getSource()==eli.btn_limpiar){
+            limpiarcamposeliminar();
+        }
+        if(e.getSource()==modi.btn_limpiar){
+            limpiarcamposmodificar();
+        }
+        
         //Eventos de Menu de la ventana Agregar
         if(e.getSource()==menu.menu_agregar){
             menu.setVisible(false);
@@ -663,6 +678,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         agre.txtcelular.setText("");
         agre.txtemail.setText("");
         agre.txtsueldobruto.setText("");
+        agre.txtcodigo.grabFocus();
     }
     
     private void limpiarcamposeliminar(){
@@ -675,6 +691,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         eli.txtcelular.setText("");
         eli.txtemail.setText("");
         eli.txtsueldobruto.setText("");
+        eli.txtcodigo.grabFocus();
     }
     
     private void limpiarcamposmodificar(){
@@ -687,6 +704,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         modi.txtcelular.setText("");
         modi.txtemail.setText("");
         modi.txtsueldobruto.setText("");
+        modi.txtcodigo.grabFocus();
     }
     
     //Método para actualizar datos en jTable
