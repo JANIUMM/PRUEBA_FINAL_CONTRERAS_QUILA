@@ -63,7 +63,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         list.setResizable(false);
         actualizarMostrar();
         
-        //Escuchas de cierre de ventana con eventos de Ventana
+        //Escuchas con eventos de Ventana para programar cierres de todas las ventanas
         menu.addWindowListener(this);
         agre.addWindowListener(this);
         eli.addWindowListener(this);
@@ -82,24 +82,41 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         agre.menu_eliminar.addActionListener(this);
         agre.menu_listar.addActionListener(this);
         agre.menu_salir.addActionListener(this);
-        //Escuchas del menu Vista menu Eliminar
+        //Escuchas del menu Vista Eliminar
         eli.menu_agregar.addActionListener(this);
         eli.menu_modificar.addActionListener(this);
         eli.menu_eliminar.addActionListener(this);
         eli.menu_listar.addActionListener(this);
         eli.menu_salir.addActionListener(this);
-        //Escuchas del menu Vista menu Principal
+        //Escuchas del menu Vista Modificar
         modi.menu_agregar.addActionListener(this);
         modi.menu_modificar.addActionListener(this);
         modi.menu_eliminar.addActionListener(this);
         modi.menu_listar.addActionListener(this);
         modi.menu_salir.addActionListener(this);
-        //Escuchas del menu Vista menu Principal
+        //Escuchas del menu Vista Listar
         list.menu_agregar.addActionListener(this);
         list.menu_modificar.addActionListener(this);
         list.menu_eliminar.addActionListener(this);
         list.menu_listar.addActionListener(this);
         list.menu_salir.addActionListener(this);
+        
+        //Escuchas de los elementos de la Vista Agregar
+        agre.btnagregar.addActionListener(this);
+        agre.btn_volver_agregar.addActionListener(this);
+        
+        //Escuchas de los elementos de la Vista Eliminar
+        eli.btneliminar.addActionListener(this);
+        eli.btnbuscar_eliminar.addActionListener(this);
+        eli.btn_volver_eliminar.addActionListener(this);
+        
+        //Escuchas de los elementos de la Vista Modificar
+        modi.btnbuscar_modificar.addActionListener(this);
+        modi.btnmodificar.addActionListener(this);
+        modi.btn_volver_modificar.addActionListener(this);
+        
+        //Escuchas de los elementos de la Vista Listar
+        list.btn_volver_listar.addActionListener(this);
     }
 
     @Override
@@ -198,6 +215,21 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         }else if(e.getSource()==agre.menu_listar){
             agre.setVisible(false);
             list.setVisible(true);
+        }
+        
+         //Action Event de los botones volver de todas las ventanas
+        if(e.getSource()==eli.btn_volver_eliminar){
+            menu.setVisible(true);
+            eli.setVisible(false);
+        }else if(e.getSource()==modi.btn_volver_modificar){
+            menu.setVisible(true);
+            modi.setVisible(false);
+        }else if(e.getSource()==list.btn_volver_listar){
+            menu.setVisible(true);
+            list.setVisible(false);
+        }else if(e.getSource()==agre.btn_volver_agregar){
+            menu.setVisible(true);
+            agre.setVisible(false);
         }
        
     }

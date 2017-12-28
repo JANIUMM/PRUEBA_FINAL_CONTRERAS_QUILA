@@ -58,7 +58,7 @@ public class Listar extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbl_listar);
 
-        btn_volver_listar.setText("jButton1");
+        btn_volver_listar.setText("Volver");
 
         menu_opciones.setText("OPCIONES");
 
