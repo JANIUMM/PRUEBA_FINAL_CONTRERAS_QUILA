@@ -39,6 +39,33 @@ public class ConsultasModelo {
         return false;
     }
     
+    public Modelo buscarPeliculaporCodigo(int codigo) {
+        Modelo model = null;
+        try {
+            String query = "SELECT * FROM contrata.empleados WHERE codigo=?";
+            PreparedStatement buscar = c.getConexion().prepareStatement(query);
+            buscar.setInt(1, codigo);
+            //LLAMADO executeQuery
+            ResultSet rs = buscar.executeQuery();
+            while (rs.next()) {
+                model = new Modelo();
+                model.setCodigo(rs.getInt("codigo"));
+                model.setRut(rs.getString("rut"));
+                model.setNombre(rs.getString("nombre"));
+                model.setApellido(rs.getString("apellido"));
+                model.setCelular(rs.getInt("celular"));
+                model.setEmail(rs.getString("email"));
+                model.setSueldo_bruto(rs.getDouble("sueldo_bruto"));
+                model.setEst_civil(rs.getString("est_civil"));
+                model.setNom_depto(rs.getString("nom_depto"));
+            }
+            c.close(buscar);
+        } catch (Exception e) {
+            System.out.println("Error al buscar por codigo " + e.getMessage());
+        }
+        return model;
+    }
+    
     public boolean eliminarEmpleadoporCodigo(int codigo) {
         try {
             String query = "DELETE FROM contrata.empleados WHERE codigo=?";
