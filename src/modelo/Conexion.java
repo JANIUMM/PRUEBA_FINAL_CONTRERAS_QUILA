@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class Conexion {
     
     private static final String driverClassName = "com.mysql.jdbc.Driver";
-    private static final String driverUrl="jdbc:mysql://localhost:3306/contrata.empleados";
+    private static final String driverUrl="jdbc:mysql://localhost:3306/contrata";
     private static final String Usuario = "root";
     private static final String Password = "8162";       
     

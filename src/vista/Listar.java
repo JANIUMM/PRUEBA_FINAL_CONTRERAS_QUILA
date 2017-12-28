@@ -30,15 +30,16 @@ public class Listar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_listar = new javax.swing.JTable();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        MenuPrincipal = new javax.swing.JMenuBar();
         menu_opciones = new javax.swing.JMenu();
-        menu_agregar = new javax.swing.JMenu();
-        menu_modificar = new javax.swing.JMenu();
-        menu_eliminar = new javax.swing.JMenu();
-        menu_listar = new javax.swing.JMenu();
-        menu_salir = new javax.swing.JMenu();
+        menu_agregar = new javax.swing.JMenuItem();
+        menu_eliminar = new javax.swing.JMenuItem();
+        menu_modificar = new javax.swing.JMenuItem();
+        menu_salir = new javax.swing.JMenuItem();
+        menu_catalogo = new javax.swing.JMenu();
+        menu_listar = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Lista de Empleados");
@@ -56,42 +57,48 @@ public class Listar extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbl_listar);
 
-        menu_opciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        menu_opciones.setText("Menu");
+        menu_opciones.setText("OPCIONES");
 
-        menu_agregar.setText("Agregar Empleados");
+        menu_agregar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        menu_agregar.setText("Agregar Empleado");
         menu_opciones.add(menu_agregar);
 
-        menu_modificar.setText("Modificar Empleados");
-        menu_opciones.add(menu_modificar);
-
-        menu_eliminar.setText("Eliminar Empleados");
+        menu_eliminar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        menu_eliminar.setText("Eliminar Empleado");
         menu_opciones.add(menu_eliminar);
 
-        jMenuBar1.add(menu_opciones);
+        menu_modificar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        menu_modificar.setText("Modificar Empleado");
+        menu_opciones.add(menu_modificar);
 
-        menu_listar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        menu_listar.setText("Lista Empleados");
-        jMenuBar1.add(menu_listar);
-
+        menu_salir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         menu_salir.setText("Salir");
-        jMenuBar1.add(menu_salir);
+        menu_opciones.add(menu_salir);
 
-        setJMenuBar(jMenuBar1);
+        MenuPrincipal.add(menu_opciones);
+
+        menu_catalogo.setText("LISTA EMPLEADOS");
+
+        menu_listar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        menu_listar.setText("Listar Empleados");
+        menu_catalogo.add(menu_listar);
+
+        MenuPrincipal.add(menu_catalogo);
+
+        setJMenuBar(MenuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(84, 84, 84)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,8 +106,8 @@ public class Listar extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -142,15 +149,16 @@ public class Listar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuBar MenuPrincipal;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JMenu menu_agregar;
-    public javax.swing.JMenu menu_eliminar;
-    public javax.swing.JMenu menu_listar;
-    public javax.swing.JMenu menu_modificar;
+    public javax.swing.JMenuItem menu_agregar;
+    public javax.swing.JMenu menu_catalogo;
+    public javax.swing.JMenuItem menu_eliminar;
+    public javax.swing.JMenuItem menu_listar;
+    public javax.swing.JMenuItem menu_modificar;
     public javax.swing.JMenu menu_opciones;
-    public javax.swing.JMenu menu_salir;
+    public javax.swing.JMenuItem menu_salir;
     public javax.swing.JTable tbl_listar;
     // End of variables declaration//GEN-END:variables
 }

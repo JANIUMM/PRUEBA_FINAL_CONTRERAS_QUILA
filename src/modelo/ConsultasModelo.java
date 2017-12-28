@@ -90,7 +90,7 @@ public class ConsultasModelo {
         String[] columNames = {"CODIGO", "RUT", "NOMBRE", "APELLIDO", "CELULAR", "EMAIL", "SUELDO BRUTO", "EST CIVIL", "NOMBRE DEPTO"};
         
         try {
-            PreparedStatement pstm = c.getConexion().prepareStatement("SELECT count(*) as total FROM empleados");
+            PreparedStatement pstm = c.getConexion().prepareStatement("SELECT count(*) as total FROM contrata.empleados");
             ResultSet res = pstm.executeQuery();
             res.next();
             registros = res.getInt("total");
