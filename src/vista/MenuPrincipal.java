@@ -19,6 +19,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menu_salir = new javax.swing.JMenuItem();
         menu_catalogo = new javax.swing.JMenu();
         menu_listar = new javax.swing.JMenuItem();
+        menu_listar_redes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("MENU");
@@ -52,6 +53,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menu_listar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         menu_listar.setText("Listar Empleados");
         menu_catalogo.add(menu_listar);
+
+        menu_listar_redes.setText("Listar Empleados Redes");
+        menu_catalogo.add(menu_listar_redes);
 
         MenuPrincipal.add(menu_catalogo);
 
@@ -99,6 +103,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenu menu_catalogo;
     public javax.swing.JMenuItem menu_eliminar;
     public javax.swing.JMenuItem menu_listar;
+    public javax.swing.JMenuItem menu_listar_redes;
     public javax.swing.JMenuItem menu_modificar;
     public javax.swing.JMenu menu_opciones;
     public javax.swing.JMenuItem menu_salir;
