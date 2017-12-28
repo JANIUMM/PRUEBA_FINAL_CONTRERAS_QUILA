@@ -109,6 +109,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         
         agre.txtrut.addFocusListener(this);
         agre.txtemail.addFocusListener(this);
+        agre.txtcelular.addFocusListener(this);
         
         //Escuchas del menu Vista Eliminar
         eli.menu_agregar.addActionListener(this);
@@ -387,6 +388,8 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
                 JOptionPane.showMessageDialog(agre, "CÓDIGO debe ser MENOR a 100", "ERROR", JOptionPane.WARNING_MESSAGE);
             }else if(agre.txtrut.getText().isEmpty()){
                 JOptionPane.showMessageDialog(agre, "RUT no puede quedar en blanco", "ERROR", JOptionPane.WARNING_MESSAGE);
+            }else if(agre.txtrut.getText().length()<8){
+                JOptionPane.showMessageDialog(agre, "RUT no puede poseer menos de 8 dígitos", "ERROR", JOptionPane.WARNING_MESSAGE);
             }else if(agre.txtnombre.getText().isEmpty()){
                 JOptionPane.showMessageDialog(agre, "NOMBRE no puede quedar en blanco", "ERROR", JOptionPane.WARNING_MESSAGE);
             }else if(agre.txtapellido.getText().isEmpty()){
@@ -399,7 +402,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
                 JOptionPane.showMessageDialog(agre, "NUMERO DE CELULAR debe poseer 9 dígitos", "ERROR", JOptionPane.WARNING_MESSAGE);
             }else if(agre.txtemail.getText().isEmpty()){
                 JOptionPane.showMessageDialog(agre, "EMAIL no debe quedar vacío", "ERROR", JOptionPane.WARNING_MESSAGE);
-            }else if(agre.txtsueldobruto.getText().length()==0){
+            }else if(agre.txtsueldobruto.getText().isEmpty()){
                 JOptionPane.showMessageDialog(agre, "SUELDO no debe quedar en blanco", "ERROR", JOptionPane.WARNING_MESSAGE);
             }else if((Double.parseDouble(agre.txtsueldobruto.getText().trim())<120000)){
                 JOptionPane.showMessageDialog(agre, "SUELDO BRUTO debe ser MAYOR O IGUAL A a $120.000", "ERROR", JOptionPane.WARNING_MESSAGE);
@@ -554,10 +557,35 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
 
     @Override
     public void focusLost(FocusEvent fe) {
+        
         if(fe.getSource()==agre.txtrut){
-            String frase=agre.txtrut.getText();
-            agre.txtrut.setText(frase.substring(0, 8)+'-'+frase.substring(8, 9));
+            try {
+                while(agre.txtrut.getText().length()==9){
+                    String frase=agre.txtrut.getText();
+                    agre.txtrut.setText(frase.substring(0, 2)+'.'+frase.substring(2, 5)+'.'+frase.substring(5, 8)+'-'+frase.substring(8, 9));
+                }
+                while(agre.txtrut.getText().length()==8){
+                    String frase=agre.txtrut.getText();
+                    agre.txtrut.setText(frase.substring(0, 1)+'.'+frase.substring(1, 4)+'.'+frase.substring(4, 7)+'-'+frase.substring(7, 8));
+                }
+                if(agre.txtrut.getText().length()<8){
+                    JOptionPane.showMessageDialog(agre, "RUT no puede poseer menos de 8 dígitos", "ERROR", JOptionPane.WARNING_MESSAGE);
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            }     
         }
+        
+        if(fe.getSource()==agre.txtcelular){ 
+            try {
+                String frase=agre.txtcelular.getText();
+                agre.txtcelular.setText(frase.substring(0, 1)+'-'+frase.substring(1, 9));    
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(agre, "CELULAR debe poseer 9 números", "ERROR", JOptionPane.WARNING_MESSAGE);
+                System.out.println(e);
+            }        
+        }
+        
         if(fe.getSource()==agre.txtemail){
             int arroba=0;
             boolean punto=false;
