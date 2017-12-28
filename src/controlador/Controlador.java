@@ -193,7 +193,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         if(e.getSource()==modi.btn_limpiar){
             limpiarcamposmodificar();
         }
-        
+        //1
         //Eventos de Menu de la ventana Agregar
         if(e.getSource()==menu.menu_agregar){
             menu.setVisible(false);
