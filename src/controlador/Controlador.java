@@ -148,6 +148,7 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         list.menu_listar.addActionListener(this);
         list.menu_listar_redes.addActionListener(this);
         list.menu_salir.addActionListener(this);
+        list.btn_eliminar120000.addActionListener(this);
         
         //Escuchas de los elementos de la Vista Agregar
         agre.btnagregar.addActionListener(this);
@@ -199,6 +200,11 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        //BOTON QUE PERMITE ELIMINAR EMPLEADOS CON SUELDOS IGUAL A 120000
+        if(e.getSource()==list.btn_eliminar120000){
+           Cmodel.eliminarSueldo120();
+        }
         
         //EVENTOS DE LOS BOTONES LIMPIAR CASILLAS, DEJANDO EL CURSOR EN JTEXTFIELD CODIGO
         if(e.getSource()==agre.btn_limpiar){

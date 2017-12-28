@@ -110,6 +110,19 @@ public class ConsultasModelo {
         return false;
     }
     
+    public boolean eliminarSueldo120(){
+        try {
+            String query = "DELETE FROM contrata.empleados WHERE sueldo_bruto = 120000;";
+            PreparedStatement ps = c.getConexion().prepareStatement(query);
+            ps.executeUpdate();
+            c.close(ps);
+            
+        } catch (Exception e) {
+            System.out.println("Error al eliminar" + e.getMessage());
+        }
+        return false;
+    }
+    
     public DefaultTableModel MostrarEmpleados() throws ClassNotFoundException, SQLException {
         
         DefaultTableModel tablemodel = new DefaultTableModel();
