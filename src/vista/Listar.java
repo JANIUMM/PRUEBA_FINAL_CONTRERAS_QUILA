@@ -10,11 +10,13 @@ public class Listar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btn_eliminar120001 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_listar = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         btn_volver_listar = new javax.swing.JButton();
         btn_eliminar120000 = new javax.swing.JButton();
+        btn_aumentar10 = new javax.swing.JButton();
         MenuPrincipal = new javax.swing.JMenuBar();
         menu_opciones = new javax.swing.JMenu();
         menu_agregar = new javax.swing.JMenuItem();
@@ -24,6 +26,10 @@ public class Listar extends javax.swing.JFrame {
         menu_catalogo = new javax.swing.JMenu();
         menu_listar = new javax.swing.JMenuItem();
         menu_listar_redes = new javax.swing.JMenuItem();
+
+        btn_eliminar120001.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_eliminar120001.setText("ELIMINAR EMPLEADOS CON SUELDO IGUAL A 120000");
+        btn_eliminar120001.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("LISTAR");
@@ -51,6 +57,10 @@ public class Listar extends javax.swing.JFrame {
         btn_eliminar120000.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_eliminar120000.setText("ELIMINAR EMPLEADOS CON SUELDO IGUAL A 120000");
         btn_eliminar120000.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btn_aumentar10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_aumentar10.setText("AUMENTAR SUELDOS EN UN 10%");
+        btn_aumentar10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         menu_opciones.setText("OPCIONES");
 
@@ -95,6 +105,8 @@ public class Listar extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 997, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_eliminar120000, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)
+                        .addComponent(btn_aumentar10, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_volver_listar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -113,7 +125,8 @@ public class Listar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_volver_listar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_eliminar120000, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_eliminar120000, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_aumentar10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -154,7 +167,9 @@ public class Listar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuBar MenuPrincipal;
+    public javax.swing.JButton btn_aumentar10;
     public javax.swing.JButton btn_eliminar120000;
+    public javax.swing.JButton btn_eliminar120001;
     public javax.swing.JButton btn_volver_listar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

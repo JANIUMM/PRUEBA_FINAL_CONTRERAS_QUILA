@@ -149,6 +149,8 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
         list.menu_listar_redes.addActionListener(this);
         list.menu_salir.addActionListener(this);
         list.btn_eliminar120000.addActionListener(this);
+        list.btn_aumentar10.addActionListener(this);
+                
         
         //Escuchas de los elementos de la Vista Agregar
         agre.btnagregar.addActionListener(this);
@@ -200,6 +202,14 @@ public class Controlador implements ActionListener, WindowListener, MouseListene
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        //BOTON QUE PERMITE AUMENTAR SUELDOS EN UN 10%
+        if(e.getSource()==list.btn_aumentar10){
+            int msje=JOptionPane.showConfirmDialog(list,"¿ESTA SEGURO QUE DESEA AUMENTAR EL SUELDO EN UN 10% A TODOS LOS TRABAJADORES?", "AUMENTAR", JOptionPane.YES_NO_OPTION);
+            if(msje==JOptionPane.YES_OPTION){
+                Cmodel.aumentar10();
+            }
+        }
         
         //BOTON QUE PERMITE ELIMINAR EMPLEADOS CON SUELDOS IGUAL A 120000
         if(e.getSource()==list.btn_eliminar120000){

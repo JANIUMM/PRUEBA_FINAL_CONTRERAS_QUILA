@@ -123,6 +123,19 @@ public class ConsultasModelo {
         return false;
     }
     
+    public boolean aumentar10(){
+        try {
+            String query = "update contrata.empleados set sueldo_bruto = (sueldo_bruto*1.1) where codigo > 0";
+            PreparedStatement ps = c.getConexion().prepareStatement(query);
+            ps.executeUpdate();
+            c.close(ps);
+            
+        } catch (Exception e) {
+            System.out.println("Error al eliminar" + e.getMessage());
+        }
+        return false;
+    }
+    
     public DefaultTableModel MostrarEmpleados() throws ClassNotFoundException, SQLException {
         
         DefaultTableModel tablemodel = new DefaultTableModel();
